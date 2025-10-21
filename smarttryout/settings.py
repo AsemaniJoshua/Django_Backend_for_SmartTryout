@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-3m&bq+)8b5&o&03*5(-l^$i&5ouk9oa(t68@365oav-mc(h9g0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://django-backend-for-smarttryout.onrender.com']
 
 
 # Application definition
