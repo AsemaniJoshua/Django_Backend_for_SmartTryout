@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-3m&bq+)8b5&o&03*5(-l^$i&5ouk9oa(t68@365oav-mc(h9g0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://django-backend-for-smarttryout.onrender.com']
+ALLOWED_HOSTS = ['django-backend-for-smarttryout.onrender.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
