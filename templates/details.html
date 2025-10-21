@@ -1,0 +1,65 @@
+{% load static %}
+<!Doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Profile Details - SmartTryout</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="{% static 'js/details.js' %}"></script>
+  <style>
+    .glass2 {
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      border: 1px solid rgba(255,255,255,0.06);
+      box-shadow: 0 10px 40px rgba(2,6,23,0.6);
+      backdrop-filter: blur(12px) saturate(120%);
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-gray-800 text-gray-100 p-6 flex items-center justify-center">
+  <main id="profileRoot" class="relative z-10 w-full max-w-4xl mx-auto p-6 glass2 rounded-3xl">
+    <div id="loadingSpinner" class="flex flex-col items-center justify-center min-h-[300px]">
+      <svg class="animate-spin h-12 w-12 text-indigo-400 mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path>
+      </svg>
+      <span class="text-indigo-300 text-lg">Loading profile...</span>
+    </div>
+    <div id="profileContent" style="display:none;">
+      <div class="flex flex-col md:flex-row items-start gap-6">
+        <aside class="w-full md:w-1/3 flex flex-col items-center text-center p-4">
+          <img id="profileImage" src="https://ui-avatars.com/api/?name=Avatar&size=160&background=6d28d9&color=fff" alt="Profile image" class="w-40 h-40 rounded-full object-cover ring-4 ring-white/10 shadow-xl">
+          <h2 id="profileName" class="mt-4 text-2xl font-semibold">-</h2>
+          <p id="profileEmail" class="mt-1 text-sm text-gray-300">-</p>
+          <button id="logoutBtn" class="mt-4 rounded-md bg-red-600 px-3 py-2 text-white text-sm">Log out</button>
+        </aside>
+        <section class="flex-1 p-4">
+          <div class="bg-white/3 p-4 rounded-xl">
+            <h3 class="text-lg font-medium">About</h3>
+            <p id="profileBio" class="mt-2 text-gray-200">No bio provided.</p>
+          </div>
+          <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-white/3 p-4 rounded-xl">
+              <h4 class="text-sm text-gray-300">Account created</h4>
+              <p id="profileCreated" class="mt-2 text-gray-200"></p>
+            </div>
+            <div class="bg-white/3 p-4 rounded-xl">
+              <h4 class="text-sm text-gray-300">Contact</h4>
+              <p id="profileContact" class="mt-2 text-gray-200">-</p>
+            </div>
+          </div>
+          <div class="mt-6">
+            <h4 class="text-sm text-gray-300">Preferences</h4>
+            <ul id="profilePrefs" class="mt-2 text-gray-200 space-y-1">
+              <li>Responsive UI</li>
+              <li>Privacy-first</li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+  
+</body>
+</html>

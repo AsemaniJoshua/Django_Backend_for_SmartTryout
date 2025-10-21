@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SmartTryout - Welcome</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .glass {
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.1),
+          rgba(255, 255, 255, 0.02)
+        );
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+        backdrop-filter: blur(10px) saturate(120%);
+      }
+      .bg-anim {
+        background: radial-gradient(
+            circle at 10% 20%,
+            rgba(99, 102, 241, 0.12),
+            transparent 15%
+          ),
+          radial-gradient(
+            circle at 90% 80%,
+            rgba(16, 185, 129, 0.1),
+            transparent 12%
+          ),
+          linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.02),
+            rgba(255, 255, 255, 0)
+          );
+        backdrop-filter: blur(6px);
+      }
+    </style>
+  </head>
+  <body
+    class="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-slate-900 to-gray-800 text-gray-100 p-6"
+  >
+    <div class="absolute inset-0 overflow-hidden -z-10">
+      <div
+        class="w-[60rem] h-[60rem] opacity-10 blur-3xl bg-anim transform -translate-x-1/4 -translate-y-1/3 rotate-12 pointer-events-none"
+      ></div>
+    </div>
+    <main
+      class="relative z-10 w-full max-w-3xl mx-auto p-8 glass rounded-3xl flex flex-col items-center text-center"
+    >
+      <img
+        src="https://img.icons8.com/fluency/96/rocket.png"
+        alt="SmartTryout Logo"
+        class="mx-auto mb-4 w-20 h-20"
+      />
+      <h1
+        class="text-4xl md:text-5xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-pink-400 to-teal-300"
+      >
+        Welcome to SmartTryout
+      </h1>
+      <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl">
+        Your modern, secure, and beautiful platform for seamless sign up, login,
+        and profile management. Experience glassmorphism and responsive design
+        at its best.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+        <a
+          href="{% url "login" %}"
+          class="px-6 py-3 rounded-lg bg-indigo-500 hover:bg-indigo-600 text-white font-semibold shadow-lg focus:outline-none focus:ring-2 focus:ring-indigo-300 transition"
+          >Login</a
+        >
+        <a
+          href="{% url "register" %}"
+          class="px-6 py-3 rounded-lg bg-pink-500 hover:bg-pink-600 text-white font-semibold shadow-lg focus:outline-none focus:ring-2 focus:ring-pink-300 transition"
+          >Sign Up</a
+        >
+        <a
+          href="{% url "home" %}"
+          class="px-6 py-3 rounded-lg bg-white/10 hover:bg-white/20 text-indigo-200 font-semibold shadow-lg focus:outline-none focus:ring-2 focus:ring-indigo-100 transition"
+          >Learn More</a
+        >
+      </div>
+      <div class="mt-4 text-sm text-gray-400">
+        &copy; 2025 SmartTryout. All rights reserved.
+      </div>
+    </main>
+  </body>
+</html>
